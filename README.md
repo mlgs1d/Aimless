@@ -1,6 +1,6 @@
 # React + Vite
 
-To run the app, open terminal and navigate to snapshare-fe then run the following commands in order:
+To run the app, open the terminal and navigate to "aimless" then run the following commands in order:
 ```
 npm install
 npm run dev
