@@ -1,17 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
+import { useAuth } from '../../auth/Auth'
 import './DiscoverSongs.css';
 
-export default function Discover() {
-  const videoURLs = [
-    'https://youtu.be/SOfswOXtsaA?si=mDsovTa72HOI5VGn',
-    'https://youtu.be/KlDdEVKEC4s?si=QfBTLn6e_s4uJR0E',
-    'https://youtu.be/wp6oQlb--Ks?si=y8kfMdv8lSUXAbLU',
-    // ... add more video URLs
-  ];
+// Initialize Supabase client
+const supabase = createClient('https://wdnuvorjubabcofbygev.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndkbnV2b3JqdWJhYmNvZmJ5Z2V2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAxODc2MDAsImV4cCI6MjAxNTc2MzYwMH0.16lHDcYbaiQZOdO7E4BYZx2R3MjJ5acqD094Wt6S5mI');
 
-  const videoIDs = videoURLs.map(url => 
-    url.split('/').pop().split('?')[0]
-  );
+
+export default function Discover() {
+  const { user } = useAuth()
+  const [videoURLs, setVideoURLs] = useState([]);
+
+  useEffect(() => {
+    // Function to fetch video URLs from Supabase
+    const fetchVideoURLs = async () => {
+      const { data, error } = await supabase
+        .from('songs')
+        .select('video_url');
+      if (error) {
+        console.error('Error fetching videos:', error);
+      } else {
+        const urls = data.map((song) => song.video_url);
+        setVideoURLs(urls);
+      }
+    };
+    fetchVideoURLs();
+  }, []);
+
+  // Proecessing short vs standard URL links
+  const videoIDs = videoURLs.map(url => {
+    // Check if URL is a short YouTube URL
+    if (url.includes('youtu.be')) {
+      return url.split('/').pop().split('?')[0];
+    }
+    // Otherwise, assume it's a standard YouTube URL and extract the 'v' parameter
+    const urlParams = new URLSearchParams(new URL(url).search);
+    return urlParams.get('v');
+  });
 
   return (
     <div className="discover-container">
