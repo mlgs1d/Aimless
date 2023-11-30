@@ -1,3 +1,149 @@
+<<<<<<< HEAD
+/* DiscoverSongs.css */
+
+.discover-container {
+  position: relative;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; 
+}
+
+.discover-heading {
+  margin-bottom: 1rem;
+  color: #fff; 
+}
+
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 1rem;
+  width: 100%; 
+  max-width: 1200px; 
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%; 
+  padding-top: 56.25%; 
+  margin-bottom: 20px; 
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-genre {
+  position: relative; 
+  color: #fff; 
+  text-align: center;
+  padding: 5px 0;
+  margin-top: -20px; 
+}
+
+.page-number-label {
+  font-size: 24px; 
+  color: #fff; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; 
+  font-weight: 600; 
+  margin: 10px 0; 
+  padding-left: 10px; 
+}
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; 
+  margin-top: 20px; 
+}
+
+.randomize-button,
+.genre-button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  background-color: #333; 
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+.pagination button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+.randomize-button:hover,
+.genre-button:hover,
+.reset-button:hover,
+.pagination button:hover {
+  background-color: #5276ee; 
+}
+
+.genre-popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(44, 44, 44);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  color: #000; 
+}
+
+.genre-popup button {
+  margin: 10px;
+  padding: 5px 10px;
+  color: #000; 
+  background-color: #8b8a8a; 
+  border: 1px solid #8b8a8a; 
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.genre-popup button:hover {
+  background-color: #5470c9; 
+}
+
+.reset-button {
+  position: absolute;
+  top: 50px;
+  right: 238px;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+=======
 /* DiscoverSongs.css */
 
 .discover-container {
@@ -34,3 +180,4 @@
   width: 100%;
   height: 100%;
 }
+>>>>>>> d22b85091668b19f80abdc5fde68008f6825cb50
