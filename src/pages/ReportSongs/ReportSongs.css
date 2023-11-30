@@ -1,3 +1,89 @@
+<<<<<<< HEAD
+/* ReportSongs.css */
+.report-songs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+  
+.report-songs-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  color: white;
+}
+  
+  .form-group {
+    margin-bottom: 20px;
+    width: 100%; 
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: black;
+  background-color: white;
+}
+  
+  .submit-button {
+    padding: 15px;
+    background-color: #222;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #5276ee; 
+  }
+
+  .form-group select {
+    width: 100%; 
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: black; 
+    background-color: white; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+  } 
+  
+  .form-group input[type="text"] {
+    margin-top: 10px; 
+  }
+  
+  .form-group select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+  }
+  
+  .form-group option {
+    color: black;
+  }
+
+  .report-songs-title {
+    font-size: 28px; 
+=======
 /* ReportSongs.css */
 .report-songs-container {
     display: flex;
@@ -85,4 +171,5 @@
 
   .report-songs-title {
     font-size: 28px; /* Or any other size */
+>>>>>>> d22b85091668b19f80abdc5fde68008f6825cb50
   }
